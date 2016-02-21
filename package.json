@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node webpack-dev-server",
     "postinstall": "npm run build",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "build:prod": "webpack --config webpack.prod.config.js --progress --profile --colors --display-error-details --display-cached"
   },
   "author": "Wojciech Medyński <wojciech@medynski.info>",
   "license": "WTFPL",
