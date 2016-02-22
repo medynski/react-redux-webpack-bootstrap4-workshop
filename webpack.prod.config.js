@@ -23,11 +23,9 @@ var config = {
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
     new HTMLWebpackPlugin({
       template: path.resolve("src/index.html"),
-      minify: { collapseWhitespace: true },
+      minify: { collapseWhitespace: false },
     }),
   ],
 
