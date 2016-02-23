@@ -3,7 +3,7 @@ import React from 'react';
 import { ProductForm } from './ProductForm';
 import { ShopList } from './ShopList';
 
-export default class App extends React.Component {
+export class Shop extends React.Component {
     constructor(props) {
         super(props);
 

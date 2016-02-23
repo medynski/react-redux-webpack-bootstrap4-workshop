@@ -6,7 +6,7 @@ export class TodoList extends React.Component {
         return (
             <div className="todo-list col-sm-6">
                 <ul>
-                    { this.props.todoList.map(todo => <li key={ todo }>{ todo }</li>) }
+                    { this.props.todoList.map(todo => <li key={ todo+new Date().toISOString() }>{ todo }</li>) }
                 </ul>
             </div>
         );

@@ -1,7 +1,35 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './todo-list/Todo';
-import Shop from './shop/Shop';
+import { render } from 'react-dom'
+import { Router, Route, Link, browserHistory } from 'react-router'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<Shop />, document.getElementById('shop'));
+import { Todo } from './todo-list/Todo';
+import { Shop } from './shop/Shop';
+
+const ACTIVE = 'active';
+class RouterOutlet extends React.Component {
+    render() {
+        return (
+            <div>
+                <ul className="nav nav-tabs">
+                    <li className="nav-item">
+                        <Link to="/todo" className="nav-link" activeClass={ACTIVE}>todo app</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link to="/shop" className="nav-link" activeClass={ACTIVE}>shop app</Link>
+                    </li>
+                </ul>
+                <span>{ this.props.children }</span>
+            </div>
+        )
+    }
+}
+
+render((
+    <Router history={ browserHistory }>
+        <Route path="/" component={ RouterOutlet }>
+            <Route path="todo" component={ Todo } />
+            <Route path="shop" component={ Shop } />
+            <Route path="*" component={ Todo } />
+        </Route>
+    </Router>
+), document.getElementById('root'));
