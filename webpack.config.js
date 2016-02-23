@@ -34,6 +34,9 @@ var config = {
   ],
 
   module: {
+    preLoaders: [
+      {test: /\.js$/, loader: "eslint-loader", exclude: /node_modules/}
+    ],
     loaders: [
       { test: /\.css$/, loader: "style!css?sourceMap" },
       { test: /\.jsx?$/, exclude: /node_modules/, loader: "react-hot" },
