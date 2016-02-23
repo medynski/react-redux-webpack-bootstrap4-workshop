@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from 'react-dom'
-import { Router, Route, Link, browserHistory } from 'react-router'
+import { render } from 'react-dom';
+import { Router, Route, Link, browserHistory } from 'react-router'; //eslint-disable-line no-unused-vars
 
 import { Todo } from './todo-list/Todo';
 import { Shop } from './shop/Shop';
@@ -20,7 +20,7 @@ class RouterOutlet extends React.Component {
                 </ul>
                 <span>{ this.props.children }</span>
             </div>
-        )
+        );
     }
 }
 
