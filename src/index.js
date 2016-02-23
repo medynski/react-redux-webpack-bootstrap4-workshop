@@ -1,9 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, Link, browserHistory } from 'react-router'; //eslint-disable-line no-unused-vars
+import { Router, Route, Link, useRouterHistory } from 'react-router'; //eslint-disable-line no-unused-vars
+import { createHistory } from 'history';
 
 import { Todo } from './todo-list/Todo';
 import { Shop } from './shop/Shop';
+
+const browserHistory = useRouterHistory(createHistory)({
+    basename: '/react-redux'
+});
 
 const ACTIVE = 'active';
 class RouterOutlet extends React.Component {
