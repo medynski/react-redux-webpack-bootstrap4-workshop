@@ -13,8 +13,6 @@ var CompressionPlugin = require('compression-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var config = {
-  devtool: "inline-source-map",
-
   entry: [
     path.resolve("src/index.js"),
   ],
